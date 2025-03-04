@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayco Envoy Campervan</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        text-align: center;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      header {
+        background: #333;
+        color: white;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo img {
+        height: 100px;
+        margin-left: 20px;
+      }
+      nav {
+        flex: 1;
+        text-align: center;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-evenly;
+        padding: 5px 0;
+      }
+      nav ul li {
+        margin: 5px 15px;
+        padding: 5px;
+      }
+      nav ul li:not(:last-child) a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: black;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      nav ul li:last-child a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: linear-gradient(90deg, indigo, violet);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      nav ul li a:hover {
+        opacity: 0.8;
+      }
+      main {
+        margin-top: 100px;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .slideshow-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .slideshow-container {
+        position: relative;
+        width: 80%;
+        max-width: 500px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      .slide {
+        min-width: 100%;
+      }
+      .slide img {
+        width: 100%;
+        display: block;
+      }
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        border-radius: 5px;
+      }
+      .prev {
+        left: 10px;
+      }
+      .next {
+        right: 10px;
+      }
+      .amenities {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: white;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        text-align: left;
+      }
+      .amenities h2 {
+        margin-bottom: 20px;
+        padding-left: 10px;
+      }
+      .amenities ul {
+        padding: 0 10px;
+      }
+      .amenities ul li {
+        margin: 10px 0;
+        font-size: 1.2em;
+      }
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+      .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .footer-section {
+        margin: 10px;
+        text-align: left;
+      }
+      .footer-section h3 {
+        margin-bottom: 10px;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-section ul li {
+        margin-bottom: 5px;
+      }
+      .footer2 {
+        background-color: #333;
+        width: 100%;
+        color: white;
+        word-spacing: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="/images/logo.png"
+          style="border-radius: 50%"
+          alt="Motor Home India Logo"
+        />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="/aboutus.html">About Us</a></li>
+          <li><a href="/index.html#our-caravans">Our Caravans</a></li>
+          <li><a href="/index.html#our-destinations">Destinations</a></li>
+          <li><a href="/contact_us.html">Rent a Caravan</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Jayco Envoy Camperbus</h1>
+      <section class="slideshow-section">
+        <div class="slideshow-container">
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="slides">
+            <div class="slide">
+              <img src="images/jayco-envoy1.jepg" alt="Slide 1" />
+            </div>
+            <div class="slide">
+              <img src="images/jayco-envoy2.jepg" alt="Slide 2" />
+            </div>
+            <div class="slide">
+              <img src="images/jayco-envoy3.jepg" alt="Slide 3" />
+            </div>
+            <div class="slide">
+              <img src="/images/jayco-envoy4.jepg" alt="Slide 4" />
+            </div>
+          </div>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </section>
+      <section class="amenities">
+        <h2>Amenities</h2>
+        <ul>
+          <li>Comfortable Sleeping Area</li>
+          <li>Air Conditioning</li>
+          <li>Fully Equipped Kitchen</li>
+          <li>Bathroom with Shower</li>
+          <li>Entertainment System</li>
+          <li>Solar Power Backup</li>
+          <li>Spacious Storage</li>
+          <li>Outdoor Awning</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Our Menu</h3>
+          <ul>
+            <li>About Us</li>
+            <li>Rent a Caravan</li>
+            <li>Our Sites</li>
+            <li>FAQ</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Useful Links</h3>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>Refund Policy</li>
+            <li>Terms and Conditions</li>
+            <li>Website Terms and Conditions</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Details</h3>
+          <p>ALT to Raispur Road, Sector 23, Sanjay Nagar, Ghaziabad, 201002</p>
+          <p>Phone Number: +91 9999999990</p>
+          <p>Mail Id: contactus@motorhomeindia.com</p>
+        </div>
+      </div>
+    </footer>
+    <footer class="footer2">
+      &copy; 2025 Motorhome India. All rights reserved.
+    </footer>
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelector(".slides");
+      const totalSlides = document.querySelectorAll(".slide").length;
+
+      function moveSlide(step) {
+        currentIndex += step;
+        if (currentIndex >= totalSlides) {
+          currentIndex = 0;
+        } else if (currentIndex < 0) {
+          currentIndex = totalSlides - 1;
+        }
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+    </script>
+  </body>
+</html>

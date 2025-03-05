@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Motorhome India</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    
+
     <style>
       * {
         margin: 0;
@@ -16,7 +16,7 @@
       html {
         scroll-behavior: smooth;
       }
-      
+
       body {
         text-align: center;
       }
@@ -27,25 +27,28 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
       }
       .logo img {
-        height: 80px;
+        height: 100px;
         margin-left: 20px;
+      }
+      nav {
+        flex: 1;
+        text-align: center;
       }
       nav ul {
         list-style: none;
         display: flex;
         justify-content: space-evenly;
         padding: 5px 0;
-        flex-wrap: wrap;
       }
       nav ul li {
-        margin: 5px 10px;
+        margin: 5px 15px;
+        padding: 5px;
       }
-      nav ul li a {
+      nav ul li:not(:last-child) a {
         display: inline-block;
-        padding: 10px 15px;
+        padding: 10px 20px;
         border-radius: 20px;
         background: black;
         color: white;
@@ -54,89 +57,206 @@
         transition: 0.3s;
       }
       nav ul li:last-child a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 20px;
         background: linear-gradient(90deg, indigo, violet);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
       }
       nav ul li a:hover {
         opacity: 0.8;
       }
       .hero {
         width: 100%;
-        height: 400px;
+        height: 600px;
+        overflow: hidden;
+        position: relative;
         background-size: cover;
         background-position: center;
         animation: slide 30s infinite;
       }
       @keyframes slide {
-        0%, 16.66% { background-image: url("images/banner.jpeg"); }
-        16.67%, 33.32% { background-image: url("images/banner2.jpg"); }
-        33.33%, 49.98% { background-image: url("images/banner3.jpg"); }
-        49.99%, 66.64% { background-image: url("images/banner4.jpeg"); }
-        66.65%, 83.3% { background-image: url("images/banner5.jpeg"); }
-        83.31%, 100% { background-image: url("images/banner.jpeg"); }
+        0%,
+        16.66% {
+          background-image: url("images/banner.jpeg");
+        }
+        16.67%,
+        33.32% {
+          background-image: url("images/banner2.jpg");
+        }
+        33.33%,
+        49.98% {
+          background-image: url("images/banner3.jpg");
+        }
+        49.99%,
+        66.64% {
+          background-image: url("images/banner4.jpeg");
+        }
+        66.65%,
+        83.3% {
+          background-image: url("images/banner5.jpeg");
+        }
+        83.31%,
+        100% {
+          background-image: url("images/banner.jpeg");
+        }
       }
-      .our_caravans ul, .our_destinations ul {
+      .services {
+        padding: 50px;
+      }
+      .services div {
+        margin: 20px 0;
+        padding: 20px;
+        background: #f4f4f4;
+      }
+      .our_caravans {
+        padding: 50px;
+      }
+      .our_caravans ul {
+        list-style: none;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         padding: 0;
       }
-      .our_caravans li, .our_destinations li {
-        margin: 10px;
+      .our_caravans li {
+        margin: 20px;
       }
-      .our_caravans img, .our_destinations img {
+      .our_caravans li img {
         border-radius: 10px;
-        width: 100%;
-        max-width: 250px;
-        height: auto;
+        height: 150px;
+        width: 200px;
       }
-      .process-steps, .shc-steps {
+      .our_destinations {
+        padding: 50px;
+      }
+      .our_destinations ul {
+        list-style: none;
         display: flex;
+        justify-content: space-evenly;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        padding: 0;
+      }
+      .our_destinations li {
+        margin: 20px;
+      }
+      .our_destinations li img {
+        border-radius: 10px;
+        height: 100px;
+        width: 150px;
+      }
+      .why-us {
+        margin-top: 40px;
+        margin-left: 10px;
+        padding: 20px;
+        background-color: grey;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px grey;
+        text-align: center;
+      }
+      .why-us h2 {
+        margin-bottom: 20px;
+      }
+      .why-us p {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .why-us,
+      .process,
+      .shc {
+        margin-left: 10px;
+        margin-top: 40px;
+        padding: 20px;
+        background-color: grey;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .shc {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: grey;
+        width: calc(100% - 20px);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      .process h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      .process-steps {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
       }
       .step {
-        width: 100%;
-        max-width: 300px;
+        width: 30%;
       }
       .step img {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
         margin-bottom: 10px;
+      }
+      .shc h2 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      .shc-steps {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .footer {
+        margin-top: 20px;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
       }
       .footer-container {
         display: flex;
+        justify-content: space-around;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
       }
       .footer-section {
-        text-align: center;
-        max-width: 250px;
+        margin: 10px;
+        text-align: left;
       }
-      @media (max-width: 768px) {
-        header {
-          flex-direction: column;
-          text-align: center;
-        }
-        .logo img {
-          margin: 0 auto;
-        }
-        nav ul {
-          flex-direction: column;
-          text-align: center;
-          padding: 0;
-        }
-        nav ul li {
-          margin: 10px 0;
-        }
+      .footer-section h3 {
+        margin-bottom: 10px;
+      }
+      .footer-section ul {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-section ul li {
+        margin-bottom: 5px;
+      }
+      .footer2 {
+        background-color: #333;
+        width: 100%;
+        color: white;
+        word-spacing: 5px;
       }
     </style>
   </head>
   <body>
     <header>
       <div class="logo">
-        <img src="images/logo.png" style="border-radius: 50%" alt="Motor Home India Logo" />
+        <img
+          src="images/logo.png"
+          style="border-radius: 50%"
+          alt="Motor Home India Logo"
+        />
       </div>
       <nav>
         <ul>
@@ -152,11 +272,106 @@
     <section id="our-caravans" class="our_caravans">
       <h2>Our Caravans</h2>
       <ul>
-        <li><a href="stewart_stevenon.html"><img src="images/caravan1.jpeg" alt="Caravan 1" /></a></li>
-        <li><a href="t6_marcus.html"><img src="images/caravan2.jpeg" alt="Caravan 2" /></a></li>
-        <li><a href="jayco_envoy.html"><img src="images/caravan3.jpeg" alt="Caravan 3" /></a></li>
-        <li><a href="renault_master.html"><img src="images/caravan4.jpeg" alt="Caravan 4" /></a></li>
+        <li>
+          <a href="stewart_stevenon.html"
+            ><img src="images/caravan1.jpeg" alt="Caravan 1"
+          /></a>
+          <h3>Stewart-Stevenson</h3>
+        </li>
+        <li>
+          <a href="t6_marcus.html"
+            ><img src="images/caravan2.jpeg" alt="Caravan 2"
+          /></a>
+          <h3>T6 Mercus</h3>
+        </li>
+        <li>
+          <a href="jayco_envoy.html"
+            ><img src="images/caravan3.jpeg" alt="Caravan 3"
+          /></a>
+          <h3>Jayco Envoy</h3>
+        </li>
+        <li>
+          <a href="renault_master.html"
+            ><img src="images/caravan4.jpeg" alt="Caravan 4"
+          /></a>
+          <h3>Renault</h3>
+        </li>
       </ul>
+    </section>
+    <section id="our-destinations" class="our_destinations">
+      <h2>Our Destinations</h2>
+      <ul>
+        <li>
+          <img src="images/rajasthan.jpeg" alt="Destination 1" />
+          <h3>Rajasthan</h3>
+        </li>
+        <li>
+          <img src="images/himachal_pradesh.jpeg" alt="Destination 2" />
+          <h3>Himachal Pradesh</h3>
+        </li>
+        <li>
+          <img src="images/j_k.jpeg" alt="Destination 3" />
+          <h3>Jammu and Kashmir</h3>
+        </li>
+        <li>
+          <img src="images/uttrakhand.jpeg" alt="Destination 4" />
+          <h3>Uttrakhand</h3>
+        </li>
+        <li>
+          <img src="images/leh_ladhak.jpeg" alt="Destination 5" />
+          <h3>Leh Ladakh</h3>
+        </li>
+        <li>
+          <img src="images/Delhi.png" alt="Destination 6" />
+          <h3>Delhi and Agra</h3>
+        </li>
+      </ul>
+    </section>
+    <section class="why-us">
+      <h2>Why Us?</h2>
+      <p>
+        Carawander offers fully furnished caravans to make your road trips more
+        manageable and comfortable. Our camping caravan rental services include
+        a fridge, TV, Wi-Fi, and centralized air conditioning.
+      </p>
+      <p>
+        Experience luxury on your next road trip with our well-equipped
+        caravans. Block your dates and book now!
+      </p>
+    </section>
+    <section class="process">
+      <h2>The Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <img src="images/schedule.png" alt="Step 1" />
+          <h3>Pick Your Dates and Destination</h3>
+        </div>
+        <div class="step">
+          <img src="images/caravan.png" alt="Step 2" />
+          <h3>Book a Caravan of Your Choice</h3>
+        </div>
+        <div class="step">
+          <img src="images/tent.png" alt="Step 3" />
+          <h3>Start Camping with Us</h3>
+        </div>
+      </div>
+    </section>
+    <section class="shc">
+      <h2>SAFEST HOLIDAY CHOICE IN THE TIMES TODAY</h2>
+      <div class="shc-steps">
+        <div class="step">
+          <img src="images/disinfection.png" alt="Step 1" />
+          <h3>Thoroughly Sanitized Caravans</h3>
+        </div>
+        <div class="step">
+          <img src="images/travel-insurance.png" alt="Step 2" />
+          <h3>Comfortable and Safe Travel Bubble</h3>
+        </div>
+        <div class="step">
+          <img src="images/caravan (1).png" alt="Step 3" />
+          <h3>Customized Travelling Options</h3>
+        </div>
+      </div>
     </section>
     <footer class="footer">
       <div class="footer-container">
@@ -179,8 +394,16 @@
             <li><a href="#">Website Terms and Conditions</a></li>
           </ul>
         </div>
+        <div class="footer-section">
+          <h3>Contact Details</h3>
+          <p>ALT to Raispur Road, Sector 23, Sanjay Nagar, Ghaziabad, 201002</p>
+          <p>Phone Number: +91 9999999990</p>
+          <p>Mail Id: contactus@motorhomeindia.com</p>
+        </div>
       </div>
     </footer>
-    <footer class="footer2">&copy; 2025 Motorhome India. All rights reserved.</footer>
+    <footer class="footer2">
+      &copy; 2025 Motorhome India. All rights reserved.
+    </footer>
   </body>
 </html>
